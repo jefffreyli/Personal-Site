@@ -18,7 +18,8 @@ const Header = () => {
       <div className="h-screen bg-[var(--color-bg)] flex justify-center items-center">
         <Particle />
         <div className="text-center absolute">
-          <h1 className="text-6xl mb-3 font-semibold mb-5">I'm Jeffrey Li.</h1>
+        <h1 className="text-6xl mb-3 font-semibold mb-5">I&apos;m Jeffrey Li.</h1>
+
           <Typewriter
             words={phrases}
             loop={true}
