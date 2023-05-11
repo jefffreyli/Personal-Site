@@ -1,68 +1,173 @@
+import { comment } from "postcss";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
+import Comments from "./Comments.jsx"
+import { useState } from 'react';
 
 const Portfolio = () => {
+  const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsCommentsOpen(prev => !prev);
+  };
+
+  let commentIcon = (
+    <svg
+      onClick={handleClick}
+      className="text-blue-800"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-message-circle"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"></path>
+    </svg>
+  );
+  
+  let heartUnfilledIcon = (
+    <svg
+      className="text-red-400"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-heart"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+    </svg>
+  );
+  
+  let heartFilledIcon = (
+    <svg
+      className="mt-3 text-red-400"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-heart-filled"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"
+        stroke-width="0"
+        fill="currentColor"
+      ></path>
+    </svg>
+  );
+
   return (
     <div id="projects" className="">
       <div className="mt-20 lg:mx-20 md:mx-12 mx-6 h-auto">
-      <h1 className="lg:text-5xl text-4xl text-center font-bold mb-20">Projects</h1>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
-        {projects.map( (project, index) => (
-          <div key={index} className="shadow-gray-300 shadow-xl rounded-md cursor-pointer mb-auto">
-            <a href={project.link} target="_blank" rel="noreferrer">
-              <img className="hover:opacity-80 duration-500" src={project.imageURL} alt="" />
-            </a>
-            <hr className=""></hr>
-            <div>
-              <h1 className="text-black m-4">{project.title}</h1>
-            </div>
-            <div className="text-gray-600 m-4 text-sm">{project.body}</div>
-
-            <hr className="mx-3"></hr>
-            <div className="flex justify-left m-4">
-              <a className="mt-3 text-gray-400 text-xl">
-                {project.icon}
+        <h1 className="lg:text-5xl text-4xl text-center font-bold mb-20">
+          Projects
+        </h1>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="shadow-gray-300 shadow-xl rounded-md cursor-pointer mb-auto"
+            >
+              <a href={project.link} target="_blank" rel="noreferrer">
+                <img
+                  className="hover:opacity-80 duration-500"
+                  src={project.imageURL}
+                  alt=""
+                />
               </a>
-              <div className="text-gray-400 text-sm m-3">{project.langs}</div>
+              <hr className=""></hr>
+              <div>
+                <h1 className="text-black m-4">{project.title}</h1>
+              </div>
+              <div className="text-gray-600 m-4 text-sm">{project.body}</div>
+
+              <hr className="mx-3"></hr>
+
+              <div className="flex justify-between">
+                <div className="flex justify-left m-4">
+                  <a
+                    data-tooltip-id="projects-tooltip"
+                    data-tooltip-content={"View code on github"}
+                    className="mt-3 text-gray-400 text-xl"
+                  >
+                    {project.icon}
+                  </a>
+                  <Tooltip place="bottom" id="projects-tooltip" />
+                  <div className="text-gray-400 text-sm m-3">
+                    {project.langs}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-right gap-x-5 mr-6">
+                  <div className="flex items-center">
+                    {heartUnfilledIcon} <p className="ml-1 text-sm text-gray-600">3</p>
+                  </div>
+                  <div className="flex items-center">
+                    {commentIcon} <p className="ml-1 text-sm text-gray-600">5</p>
+                    <Comments open={isCommentsOpen} setOpen={setIsCommentsOpen} />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
       </div>
     </div>
   );
+
+  
 };
 
-const fillerImage = "https://st4.depositphotos.com/9485312/21658/i/600/depositphotos_216581194-stock-photo-illustration-orange-polygonal-nice-multicolor.jpg";
+
+
+const fillerImage =
+  "https://st4.depositphotos.com/9485312/21658/i/600/depositphotos_216581194-stock-photo-illustration-orange-polygonal-nice-multicolor.jpg";
 
 const projects = [
   {
     title: "School Club App",
-    imageURL:
-      "/assets/projects/bxsci clubs logo.png",
+    imageURL: "/assets/projects/bxsci clubs logo.png",
     body: "A mobile and web app for after school clubs. The app includes screens such as login, signup, dashboard, profile, and club's home.",
-    icon:  <AiFillGithub />,
+    icon: <AiFillGithub />,
     langs: "Flutter, Dart, PostgreSQL",
-    link: "https://sciclubs.vercel.app/#/"
+    link: "https://sciclubs.vercel.app/#/",
+    codeLink: "",
   },
   {
     title: "Bronx Science NHS Website",
-    imageURL:
-      "/assets/projects/bxsci_nhs_website.png",
+    imageURL: "/assets/projects/bxsci_nhs_website.png",
     body: "The official site for the Bronx Science National Honor Society (NHS), which elevates the school's commitment to the values of scholarship, service, leadership, and character. By providing volunteering opportunities around the school, such as being a tutor and tour guide, members get first-hand experience building these four skills.",
     langs: "ReactJS, Tailwind",
     icon: <AiFillGithub />,
-    link: "https://bxscinhs.vercel.app/"
+    link: "https://bxscinhs.vercel.app/",
+    codeLink: "",
   },
   {
     title: "3D Animation of Cancer",
-    imageURL:
-      "/assets/projects/3d animation dna.png",
+    imageURL: "/assets/projects/3d animation dna.png",
     body: "Millions of people are affected by cancer each year but millions more remain unaware of what it entails. This animation will go through the symptoms, development, and current treatments for cancer. The goal is to promote awareness for this disease. All animations were created using Autodesk Maya, a computer application used in 3D modeling, animation, and rendering. Python was used to automate repetitve tasks. iMovie was used to assemble the rendered clips together.",
     langs: "Python, Maya",
-    link: "https://www.youtube.com/watch?v=mRDQ30rnnb4"
+    link: "https://www.youtube.com/watch?v=mRDQ30rnnb4",
   },
-  
 ];
 
 export default Portfolio;
