@@ -3,15 +3,19 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import Comments from "./Comments.jsx"
-import { useState } from 'react';
+import Comments from "./Comments.jsx";
+import { useState } from "react";
+import { useTheme } from "next-themes";
 
 const Portfolio = () => {
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
 
   const handleClick = () => {
-    setIsCommentsOpen(prev => !prev);
+    setIsCommentsOpen((prev) => !prev);
   };
+
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   let commentIcon = (
     <svg
@@ -32,7 +36,7 @@ const Portfolio = () => {
       <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"></path>
     </svg>
   );
-  
+
   let heartUnfilledIcon = (
     <svg
       className="text-red-400"
@@ -51,7 +55,7 @@ const Portfolio = () => {
       <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
     </svg>
   );
-  
+
   let heartFilledIcon = (
     <svg
       className="mt-3 text-red-400"
@@ -76,29 +80,38 @@ const Portfolio = () => {
   );
 
   return (
-    <div id="projects" className="">
-      <div className="mt-20 lg:mx-20 md:mx-12 mx-6 h-auto">
-        <h1 className="lg:text-5xl text-4xl text-center font-bold mb-20">
+    <div id="projects" className="h-screen">
+      {currentTheme == "dark" ? (
+        <div className="border-[0.5px] mx-16" />
+      ) : (
+        <div />
+      )}
+      <div className="mt-20 lg:mx-20 md:mx-12 mx-6">
+        <h1 className="lg:text-5xl text-4xl text-center font-bold mb-20 text-dark-blue-3 dark:text-white">
           Projects
         </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="shadow-gray-300 shadow-xl rounded-md cursor-pointer mb-auto"
+              className="shadow-gray-300 dark:shadow-none dark:border-[1px] dark:shadow-md shadow-xl rounded-md cursor-pointer mb-auto"
             >
               <a href={project.link} target="_blank" rel="noreferrer">
                 <img
-                  className="hover:opacity-80 duration-500"
+                  className="hover:opacity-80 duration-500 rounded-md"
                   src={project.imageURL}
                   alt=""
                 />
               </a>
               <hr className=""></hr>
               <div>
-                <h1 className="text-black m-4">{project.title}</h1>
+                <h1 className="text-black dark:text-white m-4">
+                  {project.title}
+                </h1>
               </div>
-              <div className="text-gray-600 m-4 text-sm">{project.body}</div>
+              <div className="text-gray-600 dark:text-white m-4 text-sm">
+                {project.body}
+              </div>
 
               <hr className="mx-3"></hr>
 
@@ -117,15 +130,20 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-right gap-x-5 mr-6">
+                {/* <div className="flex items-center justify-right gap-x-5 mr-6">
                   <div className="flex items-center">
-                    {heartUnfilledIcon} <p className="ml-1 text-sm text-gray-600">3</p>
+                    {heartUnfilledIcon}{" "}
+                    <p className="ml-1 text-sm text-gray-600">3</p>
                   </div>
                   <div className="flex items-center">
-                    {commentIcon} <p className="ml-1 text-sm text-gray-600">5</p>
-                    <Comments open={isCommentsOpen} setOpen={setIsCommentsOpen} />
+                    {commentIcon}{" "}
+                    <p className="ml-1 text-sm text-gray-600">5</p>
+                    <Comments
+                      open={isCommentsOpen}
+                      setOpen={setIsCommentsOpen}
+                    />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
@@ -133,11 +151,7 @@ const Portfolio = () => {
       </div>
     </div>
   );
-
-  
 };
-
-
 
 const fillerImage =
   "https://st4.depositphotos.com/9485312/21658/i/600/depositphotos_216581194-stock-photo-illustration-orange-polygonal-nice-multicolor.jpg";
