@@ -46,7 +46,7 @@ export default function Song() {
             </Link>
           ) : (
             <Image
-              className="rounded-md"
+              className="rounded-md border-[1px] border-gray-300 dark:border-white"
               src="/grey-spotify-logo.jpeg"
               alt={`spotify logo`}
               width={400}
