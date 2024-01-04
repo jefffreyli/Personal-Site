@@ -1,8 +1,6 @@
 import { comment } from "postcss";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 import Comments from "./Comments.jsx";
 import { useState } from "react";
 import { useTheme } from "next-themes";
