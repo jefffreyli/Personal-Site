@@ -1,7 +1,7 @@
 import querystring from "querystring";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 const {

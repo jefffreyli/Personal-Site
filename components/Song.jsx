@@ -37,7 +37,7 @@ export default function Song() {
           {isPlaying ? (
             <Link href={songUrl} target="_blank">
               <Image
-                className="rounded-md"
+                className="rounded-md border-[1px] border-gray-300 dark:border-white"
                 src={albumImageUrl}
                 alt={`${title} album image`}
                 width={400}
