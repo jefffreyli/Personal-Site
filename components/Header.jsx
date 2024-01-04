@@ -6,32 +6,30 @@ import {
 } from "react-icons/ai";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { Typewriter } from "react-simple-typewriter";
-// import { Tooltip } from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
-const Tooltip = dynamic(() => import("react-tooltip"), { ssr: false });
-
 const Header = () => {
-  const socialInitial = { scale: 0 };
-  const socialAnimate = { scale: 1 };
+  // const socialInitial = { scale: 0 };
+  // const socialAnimate = { scale: 1 };
 
-  const headerInitial = { y: -500 };
-  const headerAnimate = { y: 0 };
-  const headerTransition = {
-    type: "spring",
-    stiffness: 120,
-    damping: 20,
-  };
+  // const headerInitial = { y: -500 };
+  // const headerAnimate = { y: 0 };
+  // const headerTransition = {
+  //   type: "spring",
+  //   stiffness: 120,
+  //   damping: 20,
+  // };
 
-  const typewriterInitial = { scale: 0 };
-  const typewriterAnimate = { scale: 1 };
-  const typewriterTransition = {
-    type: "spring",
-    stiffness: 120,
-    damping: 20,
-  };
+  // const typewriterInitial = { scale: 0 };
+  // const typewriterAnimate = { scale: 1 };
+  // const typewriterTransition = {
+  //   type: "spring",
+  //   stiffness: 120,
+  //   damping: 20,
+  // };
 
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -45,49 +43,46 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
-    setIsClient(typeof window !== "undefined");
-  }, []);
-
   return (
     <header>
       <div className="h-screen bg-light-blue-1 dark:bg-dark-grey flex justify-center items-center">
         {/* <Particle /> */}
         <div className="text-center absolute">
-          <motion.div
+          {/* <motion.div
             initial={headerInitial}
             animate={headerAnimate}
             transition={headerTransition}
-          >
-            <h1 className="text-6xl mb-3 font-semibold mb-5 text-dark-blue-3 dark:text-white">
-              I&apos;m Jeffrey Li.
-            </h1>
-          </motion.div>
+          > */}
+          <h1 className="text-6xl mb-3 font-semibold mb-5 text-dark-blue-3 dark:text-white">
+            I&apos;m Jeffrey Li.
+          </h1>
+          {/* </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             initial={typewriterInitial}
             animate={typewriterAnimate}
             transition={typewriterTransition}
-          >
-            <Typewriter
-              words={phrases}
-              loop={true}
-              cursor
-              cursorStyle="_"
-              typeSpeed={100}
-              deleteSpeed={75}
-              delaySpeed={2000}
-            />
-          </motion.div>
+          > */}
+          <Typewriter
+            words={phrases}
+            loop={true}
+            cursor
+            cursorStyle="_"
+            typeSpeed={100}
+            deleteSpeed={75}
+            delaySpeed={2000}
+          />
+          {/* </motion.div> */}
 
           <div className="mt-5 flex justify-center gap-5">
             {socials.map((social, index) => (
-              <motion.div
-                key={index}
-                initial={socialInitial}
-                animate={socialAnimate}
-                transition={{ type: "spring", delay: index / 2 }}
-              >
+              // <motion.div
+              //   key={index}
+              //   initial={socialInitial}
+              //   animate={socialAnimate}
+              //   transition={{ type: "spring", delay: index / 2 }}
+              // >
+              <div>
                 <a
                   data-tooltip-id="social-tooltip"
                   data-tooltip-content={social.toolTipText}
@@ -98,7 +93,8 @@ const Header = () => {
                   {social.icon}
                 </a>
                 <Tooltip place="bottom" id="social-tooltip" />
-              </motion.div>
+              </div>
+              // </motion.div>
             ))}
           </div>
         </div>
