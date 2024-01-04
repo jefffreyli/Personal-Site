@@ -4,12 +4,14 @@ import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import SpotifyIcon from "../public/spotify-icon.svg";
+import Nav from "./Nav";
 
 export default function Song() {
   const [title, setTitle] = useState("");
   const [albumImageUrl, setAlbumImageUrl] = useState("");
   const [artist, setArtist] = useState("");
   const [songUrl, setSongUrl] = useState("");
+  const [isPlaying, setIsPlaying] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,32 +20,51 @@ export default function Song() {
       setAlbumImageUrl(res.data.albumImageUrl);
       setArtist(res.data.artist);
       setSongUrl(res.data.songUrl);
+      setIsPlaying(res.data.isPlaying);
     };
 
     fetchData();
   });
 
   return (
-    <div className="">
+    <div className="h-screen">
       <h1 className="lg:text-5xl text-4xl text-center font-bold pt-32 pb-16 text-dark-blue-3 dark:text-white">
         Currently Playing
       </h1>
 
       <div className="">
         <div className="flex justify-center">
-          <Link href={songUrl} target="_blank">
+          {isPlaying ? (
+            <Link href={songUrl} target="_blank">
+              <Image
+                className="rounded-md"
+                src={albumImageUrl}
+                alt={`${title} album image`}
+                width={400}
+                height={400}
+              />
+            </Link>
+          ) : (
             <Image
-              src={albumImageUrl}
-              alt={`${title} album image`}
+              className="rounded-md"
+              src="/grey-spotify-logo.jpeg"
+              alt={`spotify logo`}
               width={400}
               height={400}
             />
-          </Link>
+          )}
         </div>
+
         <div className="text-center pt-4">
           {/* <SpotifyIcon /> */}
-          <p className="dark:text-white">{title}</p>
-          <p className="text-gray-500">{artist}</p>
+          {isPlaying ? (
+            <div>
+              <p className="dark:text-white">{title}</p>
+              <p className="text-gray-400">{artist}</p>
+            </div>
+          ) : (
+            <p className="text-gray-400">Not Playing</p>
+          )}
         </div>
       </div>
     </div>

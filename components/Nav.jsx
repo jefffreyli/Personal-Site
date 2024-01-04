@@ -1,30 +1,47 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
 
 export default function Nav() {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
   const router = useRouter();
 
-  const isActive = href => router.pathname === href;
-
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/#projects" },
-  ];
-
+  const changeTheme = () => {
+    if (currentTheme == "light") {
+      setTheme("dark");
+    }
+    if (currentTheme == "dark") {
+      setTheme("light");
+    }
+  };
   return (
-    <nav className="absolute top-0 left-0 right-0 z-10">
-      <div className="container mx-auto px-6 py-8 flex justify-end items-center">
-        {links.map((link, index) => (
-          <Link href={link.href} key={index}>
-            <span
-              className={`cursor-pointer mx-4 ${
-                isActive(link.href) ? "font-semibold text-xl" : "font-semibold text-xl"
-              } hover:text-gray-600 hover:ease-in duration-300`}
-            >
-              {link.name}
-            </span>
-          </Link>
-        ))}
+    <nav className="flex justify-between items-center translate-y-8">
+      {router.pathname !== "/" ? (
+        <Link href="/">
+          <p className="text-dark-blue-3 dark:text-white text-3xl font-semibold font-serif px-12 underline underline-offset-8 cursor-pointer">
+            Jeffrey Li
+          </p>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+
+      <div className="flex gap-x-12 items-center">
+        <div className="scale-[2]">
+          <Link href="/projects">🧑‍💻</Link>
+        </div>
+
+        <div className="scale-[2]">
+          <Link href="/currently-playing">🎶</Link>
+        </div>
+
+        <div className="scale-[2] mr-12">
+          <button onClick={changeTheme} className="cursor-pointer">
+            {currentTheme == "light" ? "☀️" : "🌙"}
+          </button>
+        </div>
       </div>
     </nav>
   );

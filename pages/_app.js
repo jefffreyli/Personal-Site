@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div className="bg-white dark:bg-dark-grey">
+    <div className="bg-light-blue-1 dark:bg-dark-grey">
       <ThemeProvider attribute="class">
         <main className={font.className}>
           {theme == "dark" ? (

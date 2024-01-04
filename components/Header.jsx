@@ -51,18 +51,6 @@ const Header = () => {
   return (
     <header>
       <div className="h-screen bg-light-blue-1 dark:bg-dark-grey flex justify-center items-center">
-        <motion.div
-          className="absolute top-0 right-0"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        >
-          <button
-            onClick={changeTheme}
-            className="scale-[2] py-8 px-12 cursor-pointer"
-          >
-            {currentTheme == "light" ? "☀️" : "🌙"}
-          </button>
-        </motion.div>
         {/* <Particle /> */}
         <div className="text-center absolute">
           <motion.div

@@ -6,6 +6,7 @@ import "react-tooltip/dist/react-tooltip.css";
 import Comments from "./Comments.jsx";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import Nav from "./Nav.jsx";
 
 const Portfolio = () => {
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
@@ -80,14 +81,9 @@ const Portfolio = () => {
   );
 
   return (
-    <div id="projects" className="h-screen">
-      {currentTheme == "dark" ? (
-        <div className="border-[0.5px] mx-16" />
-      ) : (
-        <div />
-      )}
-      <div className="mt-20 lg:mx-20 md:mx-12 mx-6">
-        <h1 className="lg:text-5xl text-4xl text-center font-bold mb-20 text-dark-blue-3 dark:text-white">
+    <div id="projects" className="">
+      <div className="pt-20 lg:px-20 md:px-12 px-6">
+        <h1 className="lg:text-5xl text-4xl text-center font-bold pb-28 text-dark-blue-3 dark:text-white">
           Projects
         </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">

@@ -2,14 +2,16 @@ import Header from "../components/Header.jsx";
 import Portfolio from "../components/Portfolio.jsx";
 import Footer from "../components/Footer.jsx";
 import Song from "../components/Song.jsx";
+import Nav from "../components/Nav.jsx";
 
 export default function Home() {
   return (
     <>
-    <Header/>
-    <Portfolio/>
-    <Song/>
-    <Footer/>
+      <Nav />
+      <Header />
+      {/* <Portfolio/>
+    <Song/> */}
+      <Footer />
     </>
-  )
+  );
 }
