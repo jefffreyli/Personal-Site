@@ -20,7 +20,7 @@ export default function Nav() {
     <nav className="flex justify-between items-center translate-y-8">
       {router.pathname !== "/" ? (
         <Link href="/">
-          <p className="text-dark-blue-3 dark:text-white text-3xl font-semibold font-serif px-12 underline underline-offset-8 cursor-pointer">
+          <p className="text-dark-blue-3 dark:text-white text-2xl md:text-3xl font-semibold font-serif px-8 md:px-12 underline underline-offset-8 cursor-pointer">
             Jeffrey Li
           </p>
         </Link>

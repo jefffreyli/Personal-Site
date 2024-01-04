@@ -171,8 +171,8 @@ const Header = () => {
     <header>
       <div className="h-screen bg-light-blue-1 dark:bg-dark-grey flex justify-center items-center">
         {/* <Particle /> */}
-        <div className="text-center absolute">
-            <h1 className="text-6xl mb-3 font-semibold mb-5 text-dark-blue-3 dark:text-white">
+        <div className="text-center absolute px-4">
+            <h1 className="text-5xl md:text-6xl mb-3 font-semibold mb-5 text-dark-blue-3 dark:text-white">
               I&apos;m Jeffrey Li.
             </h1>
 

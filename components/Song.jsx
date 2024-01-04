@@ -27,7 +27,7 @@ export default function Song() {
   });
 
   return (
-    <div className="h-screen">
+    <div className="h-screen px-8">
       <h1 className="lg:text-5xl text-4xl text-center font-bold pt-32 pb-16 text-dark-blue-3 dark:text-white">
         Currently Playing
       </h1>
