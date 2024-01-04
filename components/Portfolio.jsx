@@ -112,13 +112,13 @@ const Portfolio = () => {
               <div className="flex justify-between">
                 <div className="flex justify-left m-4">
                   <a
-                    data-tooltip-id="projects-tooltip"
-                    data-tooltip-content={"View code on github"}
+                    // data-tooltip-id="projects-tooltip"
+                    // data-tooltip-content={"View code on github"}
                     className="mt-3 text-gray-400 text-xl"
                   >
                     {project.icon}
                   </a>
-                  <Tooltip place="bottom" id="projects-tooltip" />
+                  {/* <Tooltip place="bottom" id="projects-tooltip" /> */}
                   <div className="text-gray-400 text-sm m-3">
                     {project.langs}
                   </div>
