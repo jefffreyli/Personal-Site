@@ -6,15 +6,12 @@ import {
 } from "react-icons/ai";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { Typewriter } from "react-simple-typewriter";
-import Particle from "./Particle.jsx";
-import Nav from "../components/Nav.jsx";
-import Link from "next/link";
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useTheme } from "next-themes";
-import Song from "./Song.jsx";
+
+const Tooltip = dynamic(() => import("react-tooltip"), { ssr: false });
 
 const Header = () => {
   const socialInitial = { scale: 0 };
@@ -47,6 +44,10 @@ const Header = () => {
       setTheme("light");
     }
   };
+
+  useEffect(() => {
+    setIsClient(typeof window !== "undefined");
+  }, []);
 
   return (
     <header>
