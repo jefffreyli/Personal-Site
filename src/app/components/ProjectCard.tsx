@@ -1,43 +1,42 @@
 import Image from "next/image";
 import LabelCard from "./LabelCard";
+import { getLogoPathFromName } from "../constants";
+import { LinkPreview } from "./ui/link-preview";
 
 interface ProjectCardProps {
+  title: string;
+  projectUrl: string;
   imageSrc: string;
-  languages: string[];
   tools: string[];
   description: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  projectUrl,
   imageSrc,
-  languages,
   tools,
   description,
 }) => {
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-md overflow-hidden flex mb-10">
       <div className="w-1/2">
-        <Image
-          src={imageSrc}
-          alt="Project Image"
-          width={200}
-          height={200}
-          className="object-cover h-full w-full"
-        />
+        <LinkPreview url={projectUrl}>
+          <Image
+            src={imageSrc}
+            alt="Project Image"
+            width={200}
+            height={200}
+            className="object-cover h-full w-full"
+          />
+        </LinkPreview>
       </div>
-      <div className="w-2/3 py-4 px-6">
-        <div className="mb-4">
-          <div className="flex flex-wrap">
-            {languages.map((language, index) => (
-              <span
-                key={index}
-                className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-              >
-                {language}
-              </span>
-            ))}
-          </div>
-        </div>
+      <div className="w-2/3 py-6 px-6">
+        <h1 className="text-black font-semibold text-xl mb-2">{title}</h1>
+        <p className="text-base">{description}</p>
+
+        <div className="h-5" />
+
         <div className="mb-4">
           <div className="flex flex-wrap">
             {tools.map((tool, index) => (
@@ -50,8 +49,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
         </div>
-        <p className="text-gray-700 text-base">{description}</p>
-        <LabelCard name="Java" iconPath="/logos/java.svg" />
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
+"use client";
+
 import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import SpotifyIcon from "../public/spotify-icon.svg";
-import Nav from "./Nav";
 
 export default function Song() {
   const [title, setTitle] = useState("");
@@ -13,7 +14,7 @@ export default function Song() {
   const [songUrl, setSongUrl] = useState("");
   const [isPlaying, setIsPlaying] = useState("");
 
-  useEffect(() => {
+  useEffect( () => {
     const fetchData = async () => {
       const res = await axios.get("api/spotify");
       setTitle(res.data.title);
