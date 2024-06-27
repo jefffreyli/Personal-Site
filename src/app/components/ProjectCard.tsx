@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LabelCard from "./LabelCard";
 
 interface ProjectCardProps {
   imageSrc: string;
@@ -50,6 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
         <p className="text-gray-700 text-base">{description}</p>
+        <LabelCard name="Java" iconPath="/logos/java.svg" />
       </div>
     </div>
   );

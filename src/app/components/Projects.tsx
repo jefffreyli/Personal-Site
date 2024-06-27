@@ -3,7 +3,6 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import ProjectCard from "./ProjectCard";
-import { TracingBeam } from "./ui/tracing-beam";
 
 const Projects = () => {
   return (
