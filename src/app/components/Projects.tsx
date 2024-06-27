@@ -3,6 +3,7 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 import ProjectCard from "./ProjectCard";
+import { TracingBeam } from "./ui/tracing-beam";
 
 const Projects = () => {
   return (
@@ -10,6 +11,7 @@ const Projects = () => {
       id="projects"
       className="flex items-center justify-center bg-gray-100"
     >
+      
       <div className="max-w-4xl">
         <div className="">
           {projects.map((project, index) => (
@@ -22,6 +24,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      
     </div>
   );
 };
