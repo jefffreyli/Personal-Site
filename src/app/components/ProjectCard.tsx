@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-md overflow-hidden flex mb-10">
       <div className="w-1/2">
-        <LinkPreview url={projectUrl}>
+        {/* <LinkPreview url={projectUrl}> */}
           <Image
             src={imageSrc}
             alt="Project Image"
@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             height={200}
             className="object-cover h-full w-full"
           />
-        </LinkPreview>
+        {/* </LinkPreview> */}
       </div>
       <div className="w-2/3 py-6 px-6">
         <h1 className="text-black font-semibold text-xl mb-2">{title}</h1>
@@ -50,6 +50,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 };

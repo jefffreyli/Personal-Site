@@ -19,6 +19,7 @@ const Projects = () => {
           <div className="">
             {projects.map((project, index) => (
               <ProjectCard
+              key={index}
               title={project.title}
               projectUrl={project.link}
                 imageSrc={project.imageURL}

@@ -87,6 +87,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <LabelCard
+          key={idx}
           name={item.name}
           logoPath={item.logoPath}  
           />

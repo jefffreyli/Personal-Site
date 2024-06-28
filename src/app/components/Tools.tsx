@@ -1,4 +1,5 @@
 import { nameToLogo } from "../constants";
+import Card from "./Card";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export default function Tools() {
@@ -6,8 +7,8 @@ export default function Tools() {
     <div>
       <div className="flex justify-center">
         <p className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6 items-center text-left">
-          Here are some <span className="font-semibold">tools</span> I've used in past
-          jobs and projects. Hover over each one to learn more about my
+          Here are some <span className="font-semibold">tools</span> I've used
+          in past jobs and projects. Hover over each one to learn more about my
           development journey.
         </p>
       </div>
