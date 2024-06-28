@@ -12,7 +12,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function BioHeader() {
   return (
     <div className="flex items-center mb-12">
-      <div className="w-48 h-48 bg-gray-300 rounded-md mr-8">
+      <div className="w-40 h-40 lg:w-48 lg:h-48 bg-gray-300 rounded-md mr-8">
         <img
           src="/amazon-day-1.jpeg"
           alt="Jeffrey Li"
@@ -20,7 +20,7 @@ export default function BioHeader() {
         />
       </div>
       <div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-5 text-dark-grey">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-5 text-dark-grey">
           Hey, I&apos;m Jeffrey Li.
         </h1>
         <Typewriter

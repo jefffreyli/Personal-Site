@@ -5,7 +5,7 @@ const Bio = () => {
   return (
     <div>
       <div>
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 -mb-48">
+        <div className="flex items-center justify-center bg-gray-100 pt-4 lg:pt-24">
           <div className="max-w-4xl text-black">
             <BioHeader />
 
