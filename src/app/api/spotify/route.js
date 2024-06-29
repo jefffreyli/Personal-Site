@@ -90,8 +90,8 @@ export async function GET() {
         status: 200,
         headers: {
           "content-type": "application/json",
-          "cache-control":
-            "public, s-maxage=5, stale-while-revalidate=5, must-revalidate",
+          // "cache-control":
+          //   "public, s-maxage=5, stale-while-revalidate=5, must-revalidate",
         },
       }
     );

@@ -10,7 +10,7 @@ const Bio = () => {
             <BioHeader />
 
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <p className="">
+              <div className="">
                 I’m a sophomore at{" "}
                 <LinkPreview
                   url="https://mit.edu"
@@ -30,8 +30,8 @@ const Bio = () => {
                 team. Additionally, I’m a part-time developer at Recovering Bro,
                 a startup creating a cross-platform health and wellness app that
                 fits in your pocket.{" "}
-              </p>
-              <p className="mt-4">
+              </div>
+              <div className="mt-4">
                 Previously, I served as the Director of the IT division at{" "}
                 <LinkPreview
                   url="https://ecoaccess.org/"
@@ -42,8 +42,8 @@ const Bio = () => {
                 , a nonprofit focused on donating electronics to individuals and
                 organizations in need. Now, I contribute to EcoAccess in an
                 advisory role, focusing on IT and operations.
-              </p>
-              <p className="mt-4">
+              </div>
+              <div className="mt-4">
                 Before all of that, I interned in molecular pharmacology
                 research at the{" "}
                 <LinkPreview
@@ -58,11 +58,11 @@ const Bio = () => {
                 for cancer. During this time, I gained valuable wet lab skills
                 in cell culture, viability assays, colorimetric assays, flow
                 cytometry, and western blotting.
-              </p>
-              <p className="mt-4">
+              </div>
+              <div className="mt-4">
                 In my free time, I enjoy biking, going to the gym, watching
                 movies, and immersing myself in startup culture.
-              </p>
+              </div>
             </div>
           </div>
         </div>

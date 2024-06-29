@@ -22,6 +22,7 @@ export default function Song() {
         setArtist(res.data.artist);
         setSongUrl(res.data.songUrl);
         setIsPlaying(res.data.isPlaying);
+        console.log(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -57,14 +58,21 @@ export default function Song() {
           </div>
 
           <div className="flex">
-            <p className="">Currently listening to {"‎ "}</p>
-            <LinkPreview url={songUrl}>
-              <span className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-teal-500 to-green-800">
-                {"‎ "}
-                {title} by {artist} {"‎"}
-              </span>
-            </LinkPreview>
-            <p className="hidden lg:block">on Spotify.</p>
+            {isPlaying ? (
+              <div>
+                {" "}
+                <p className="">Currently listening to {"‎ "}</p>
+                <LinkPreview url={songUrl}>
+                  <span className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-teal-500 to-green-800">
+                    {"‎ "}
+                    {title} by {artist} {"‎"}
+                  </span>
+                </LinkPreview>
+                <p className="hidden lg:block">on Spotify.</p>
+              </div>
+            ) : (
+              <p>Not jamming to anything right now.</p>
+            )}
           </div>
         </div>
       </div>

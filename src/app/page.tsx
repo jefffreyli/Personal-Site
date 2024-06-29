@@ -4,8 +4,6 @@ import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Song from "./components/Song";
 import Tools from "./components/Tools";
-import { InfiniteMovingCards } from "./components/ui/infinite-moving-cards";
-import { nameToLogo } from "./constants";
 
 export default function Home() {
   return (
@@ -18,6 +16,7 @@ export default function Home() {
       {/* <div className="h-5" /> */}
       <Song />
       <Footer />
+      
     </div>
   );
 }
