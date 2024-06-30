@@ -1,7 +1,4 @@
 import Image from "next/image";
-import LabelCard from "./LabelCard";
-import { getLogoPathFromName } from "../constants";
-import { LinkPreview } from "./ui/link-preview";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -22,7 +19,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-md overflow-hidden sm:flex mb-10">
       <div className="sm:w-1/2">
-        {/* <LinkPreview url={projectUrl}> */}
         <Link
         href={projectUrl}
         target="_blank"
@@ -35,7 +31,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="object-cover h-full w-full"
           />
           </Link>
-        {/* </LinkPreview> */}
       </div>
       <div className="sm:w-2/3 py-6 px-6">
         <h1 className="text-black font-semibold text-xl mb-2">{title}</h1>
@@ -56,8 +51,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </div>
-
-      
     </div>
   );
 };

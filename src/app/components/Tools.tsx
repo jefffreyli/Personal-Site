@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { nameToLogo } from "../constants";
-import Card from "./Card";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export default function Tools() {

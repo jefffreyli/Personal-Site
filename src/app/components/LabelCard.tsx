@@ -1,9 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import Card from "./Card";
 
 interface LabelCardProps {
   name: string;
@@ -18,9 +15,6 @@ export default function LabelCard({
   index,
   setHoveredIndex,
 }: LabelCardProps) {
-  // useEffect(() => {
-  //   console.log("reload component");
-  // }, [hoveredIndex]);
 
   return (
     <div className="relative">
@@ -31,15 +25,6 @@ export default function LabelCard({
           setHoveredIndex(index);
         }}
         onMouseLeave={() => setHoveredIndex(-1)}
-        // onMouseMove={() => {
-        //   setHovered(true);
-        //   console.log("hovered");
-        // }}
-        // onMouseEnter={() => {
-        //   setHovered(true);
-        //   console.log("hovered");
-        // }}
-        // onMouseLeave={() => setHovered(false)}
       >
         <div className="mr-3">
           <Image
@@ -54,23 +39,4 @@ export default function LabelCard({
       </div>
     </div>
   );
-}
-
-// {hoveredIndex == idx && (
-//   <div className="fixed bottom-4 right-4 p-2 bg-white border rounded-md shadow-lg w-40 bg-black">
-//     <p>This is the textbox that appears on hover.</p>
-//   </div>
-// )}
-
-{
-  /* <div
-            key={idx}
-            className="cursor-help relative"
-            onMouseMove={() => {
-              setHoveredIndex(idx);
-              console.log("hovered");
-            }}
-            onMouseEnter={() => handleMouseEnter(idx)}
-            onMouseLeave={handleMouseLeave}
-          ></div> */
 }
