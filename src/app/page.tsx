@@ -1,5 +1,4 @@
 import Bio from "./components/Bio";
-import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
 import Song from "./components/Song";
@@ -14,7 +13,7 @@ export default function Home() {
       <div className="h-5" />
       <Projects />
       {/* <div className="h-5" /> */}
-      <Song />
+      {/* <Song /> */}
       <Footer />
       
     </div>

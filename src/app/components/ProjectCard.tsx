@@ -2,6 +2,7 @@ import Image from "next/image";
 import LabelCard from "./LabelCard";
 import { getLogoPathFromName } from "../constants";
 import { LinkPreview } from "./ui/link-preview";
+import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -19,9 +20,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
 }) => {
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-md overflow-hidden flex mb-10">
-      <div className="w-1/2">
+    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-md overflow-hidden sm:flex mb-10">
+      <div className="sm:w-1/2">
         {/* <LinkPreview url={projectUrl}> */}
+        <Link
+        href={projectUrl}
+        target="_blank"
+        >
           <Image
             src={imageSrc}
             alt="Project Image"
@@ -29,9 +34,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             height={200}
             className="object-cover h-full w-full"
           />
+          </Link>
         {/* </LinkPreview> */}
       </div>
-      <div className="w-2/3 py-6 px-6">
+      <div className="sm:w-2/3 py-6 px-6">
         <h1 className="text-black font-semibold text-xl mb-2">{title}</h1>
         <p className="text-base">{description}</p>
 

@@ -19,9 +19,9 @@ const Projects = () => {
           <div className="">
             {projects.map((project, index) => (
               <ProjectCard
-              key={index}
-              title={project.title}
-              projectUrl={project.link}
+                key={index}
+                title={project.title}
+                projectUrl={project.link}
                 imageSrc={project.imageURL}
                 tools={project.tools}
                 description={project.body}
@@ -41,7 +41,7 @@ const projects = [
   {
     title: "Visage",
     imageURL: "/assets/projects/visage-ui-2.png",
-    body: "At its core, Visage provides a simplified workflow for syncing video clips with audio — the core of editing — whether for montages, highlight reels, or edits.",
+    body: "At its core, Visage provides a simplified workflow for syncing video clips with audio — the core of editing — whether for montages, highlight reels, or edits. Created as a group submission to the 2024 MIT Weblab hackathon. Website is not live anymore due to maintenance costs.",
     tools: ["Next.js", "Tailwind", "Firebase", "FFmpeg"],
     link: "#",
     codeLink: "https://github.com/jefffreyli/video-editing-platform",
@@ -49,7 +49,7 @@ const projects = [
   {
     title: "SciClubs",
     imageURL: "/assets/projects/bxsci clubs logo.png",
-    body: "A mobile and web app for after school clubs. The app includes screens such as login, signup, dashboard, profile, and club's home.",
+    body: "SciClubs is a cross-platform app that organizes all clubs and activities for students. Club leaders can take attendance; members can view announcements and materials. Features include user authentication, database management, and multiple levels of access.",
     tools: ["Flutter", "Dart", "Firebase"],
     link: "https://sciclubs.vercel.app/#/",
     codeLink: "https://github.com/jefffreyli/Club-App",
@@ -57,7 +57,7 @@ const projects = [
   {
     title: "Bronx Science NHS Website",
     imageURL: "/assets/projects/bxsci_nhs_website.png",
-    body: "The official site for the Bronx Science National Honor Society (NHS).",
+    body: "The official site for the Bronx Science National Honor Society (NHS) provides details on the application process, member responsibilities, and tutoring forms. Created as my first web development project, it is now used and maintained by student leaders.",
     tools: ["React.js", "Tailwind"],
     link: "https://bxscinhs.vercel.app/",
     codeLink: "https://github.com/jefffreyli/Bronx-Science-NHS",
@@ -65,7 +65,7 @@ const projects = [
   {
     title: "3D Animation of Cancer",
     imageURL: "/assets/projects/3d animation dna.png",
-    body: "Millions of people are affected by cancer each year but millions more remain unaware of what it entails. This animation will go through the symptoms, development, and current treatments for cancer. The goal is to promote awareness for this disease. All animations were created using Autodesk Maya, a computer application used in 3D modeling, animation, and rendering. Python was used to automate repetitve tasks. iMovie was used to assemble the rendered clips together.",
+    body: "Millions of people are affected by cancer each year but millions more remain unaware of what it entails. The animation explains the symptoms, development, and current treatments for cancer. Its goal is to promote awareness for this disease. All animations were created using Autodesk Maya, a computer application used in 3D modeling, animation, and rendering. Python was used to automate repetitve tasks. iMovie was used to assemble the rendered clips together.",
     tools: ["Python", "Maya"],
     link: "https://www.youtube.com/watch?v=mRDQ30rnnb4",
   },

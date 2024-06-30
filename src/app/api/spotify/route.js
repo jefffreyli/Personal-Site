@@ -1,4 +1,9 @@
+import { NextResponse } from "next/server";
 import querystring from "querystring";
+
+// export const config = {
+//   runtime: "edge",
+// };
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
@@ -11,61 +16,71 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
-  const response = await fetch(TOKEN_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: querystring.stringify({
-      grant_type: "refresh_token",
-      refresh_token,
-    }),
-  });
+  try {
+    const response = await fetch(TOKEN_ENDPOINT, {
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${basic}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: querystring.stringify({
+        grant_type: "refresh_token",
+        refresh_token,
+      }),
+    });
 
-  if (!response.ok) {
-    console.error("Failed to get access token:", response.statusText);
-    const error = await response.json();
-    console.error("Error details:", error);
-    throw new Error("Failed to get access token");
+    if (!response.ok) {
+      throw new Error(`Failed to fetch access token: ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching access token:", error);
+    throw error;
   }
-
-  return response.json();
 };
 
 const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
+  try {
+    const { access_token } = await getAccessToken();
 
-  const response = await fetch(NOW_PLAYING_ENDPOINT, {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
+    const response = await fetch(NOW_PLAYING_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
 
-  if (response.status === 204 || response.status === 401) {
-    console.error("No content or unauthorized:", response.status);
-    return null;
+    if (!response.ok && response.status !== 204) {
+      throw new Error(`Failed to fetch now playing: ${response.statusText}`);
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Error fetching now playing:", error);
+    throw error;
   }
-
-  if (!response.ok) {
-    console.error("Failed to fetch currently playing:", response.statusText);
-    const error = await response.json();
-    console.error("Error details:", error);
-    throw new Error("Failed to fetch currently playing");
-  }
-
-  return response.json();
 };
 
 export async function GET() {
   try {
-    const song = await getNowPlaying();
+    const response = await getNowPlaying();
 
-    if (!song || song.item === null) {
-      return new Response(JSON.stringify({ isPlaying: false }), {
+    if (response.status === 204 || response.status > 400) {
+      return new NextResponse(JSON.stringify({ isPlaying: false }), {
         status: 200,
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+    }
+
+    const song = await response.json();
+
+    if (!song.item) {
+      return new NextResponse(JSON.stringify({ isPlaying: false }), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
         },
       });
     }
@@ -77,7 +92,7 @@ export async function GET() {
     const albumImageUrl = song.item.album.images[0].url;
     const songUrl = song.item.external_urls.spotify;
 
-    return new Response(
+    return new NextResponse(
       JSON.stringify({
         album,
         albumImageUrl,
@@ -89,19 +104,22 @@ export async function GET() {
       {
         status: 200,
         headers: {
-          "content-type": "application/json",
-          // "cache-control":
-          //   "public, s-maxage=5, stale-while-revalidate=5, must-revalidate",
+          "Content-Type": "application/json",
+          "Cache-Control":
+            "public, s-maxage=5, stale-while-revalidate=5, must-revalidate",
         },
       }
     );
   } catch (error) {
-    console.error("Error in API route:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+    console.error("Error in GET handler:", error);
+    return new NextResponse(
+      JSON.stringify({ error: "Failed to fetch now playing data" }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   }
 }
