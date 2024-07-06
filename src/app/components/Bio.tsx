@@ -34,10 +34,10 @@ const Bio = () => {
               <div className="mt-4">
                 Previously, I served as the Director of the IT division at{" "}
                 <LinkPreview
-                  url="https://ecoaccess.org/"
+                  url="https://wecareactnyc.org/"
                   className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-teal-400 to-blue-800"
                 >
-                  EcoAccess{" "}
+                  We Care Act NYC{" "}
                 </LinkPreview>{" "}
                 , a nonprofit focused on donating electronics to individuals and
                 organizations in need. Now, I contribute to EcoAccess in an
@@ -60,7 +60,7 @@ const Bio = () => {
                 cytometry, and western blotting.
               </div>
               <div className="mt-4">
-                In my free time, I enjoy biking, going to the gym, watching
+                In my free time, I enjoy cooking, working out, biking, watching
                 movies, and immersing myself in startup culture.
               </div>
             </div>
