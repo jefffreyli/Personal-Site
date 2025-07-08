@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { nameToLogo } from "../constants";
+import { nameToLogo } from "../lib/tools";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 export default function Tools() {
@@ -10,10 +10,10 @@ export default function Tools() {
   return (
     <div>
       <div className="flex justify-center">
-        <p className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6 items-center text-left">
+        <p className="max-w-4xl w-full bg-white shadow-xs rounded-lg p-6 items-center text-left">
           Here are some <span className="font-semibold">tools</span> I've used
-          in past jobs and projects. Hover over each one to learn more about my
-          development journey.
+          in previous roles and projects. Hover over each item to learn more
+          about my development experience.
         </p>
       </div>
 
@@ -21,14 +21,14 @@ export default function Tools() {
       <div className="flex justify-center">
         <InfiniteMovingCards
           items={nameToLogo}
-          direction="right"
+          direction="left"
           speed="fast"
           setHoveredIndex={setHoveredIndex}
         />
       </div>
       {hoveredIndex !== -1 && (
         <div
-          className={`fixed bottom-4 right-4 p-3 bg-white border border-gray-400 rounded-md shadow-lg w-60 bg-black transition-opacity duration-500 ${
+          className={`fixed bottom-4 right-4 p-3 bg-white border border-gray-400 rounded-md shadow-xs w-60 bg-black transition-opacity duration-500 ${
             hoveredIndex !== -1 ? "opacity-100" : "opacity-0"
           }`}
         >

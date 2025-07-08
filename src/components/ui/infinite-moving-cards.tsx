@@ -1,7 +1,7 @@
 "use client";
 
 import LabelCard from "../LabelCard";
-import { cn } from "../utils/cn";
+import { cn } from "../../lib/cn";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({

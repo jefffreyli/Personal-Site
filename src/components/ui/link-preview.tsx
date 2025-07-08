@@ -10,7 +10,7 @@ import {
   useSpring,
 } from "framer-motion";
 import Link from "next/link";
-import { cn } from "../utils/cn";
+import { cn } from "../../lib/cn";
 
 type LinkPreviewProps = {
   children: React.ReactNode;
@@ -126,7 +126,7 @@ export const LinkPreview = ({
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl"
+                className="shadow-xs rounded-xl"
                 style={{
                   x: translateX,
                 }}
