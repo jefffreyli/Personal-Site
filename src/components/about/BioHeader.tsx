@@ -10,17 +10,23 @@ import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import PhotoCarousel from "./PhotoCarousel";
 
 export default function BioHeader() {
+  const handleLinkClick = async (e: React.MouseEvent, link: string) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(link);
+      window.open(link, "_blank", "noopener,noreferrer");
+    } catch (err) {
+      // fallback: open link if clipboard fails
+      window.open(link, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div className="flex items-center mb-12">
-      <div className="w-40 h-40 lg:w-48 lg:h-48 bg-gray-300 rounded-md mr-8">
-        <img
-          src="/profile-picture.png"
-          alt="Jeffrey Li"
-          className="w-full h-full object-cover rounded-md"
-        />
-      </div>
+      <PhotoCarousel />
       <div>
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-5 text-dark-grey">
           Hi, I&apos;m Jeffrey.
@@ -42,19 +48,16 @@ export default function BioHeader() {
                 {social.icon}
               </span>
             );
-            return isInternal ? (
-              <Link key={index} href={social.link} target="_blank">
-                {iconElement}
-              </Link>
-            ) : (
+            return (
               <Link
                 key={index}
                 href={social.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 text-2xl hover:text-gray-500 transition-all"
+                onClick={(e) => handleLinkClick(e, social.link)}
               >
-                {social.icon}
+                {iconElement}
               </Link>
             );
           })}
@@ -103,4 +106,13 @@ const socials = [
   },
 ];
 
-const phrases = ["Hello :)", "Welcome to the site!", "Socials and quick links below", "Download my resume", "📍 NYC", "MIT 2027"];
+const phrases = [
+  "Hello :)",
+  "Welcome to the site!",
+  "Socials and quick links below",
+  "Download my resume",
+  "Click through the photos for more of my life",
+  "Check out my projects",
+  "📍 NYC",
+  "MIT 2027",
+];
