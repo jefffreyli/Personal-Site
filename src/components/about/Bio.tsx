@@ -34,10 +34,11 @@ const Bio = () => {
                 , a startup building a cross-platform health and wellness app.{" "}
                 <br />
                 <br />
-                My focus is on AI automation and cloud computing — specifically
-                how we can use AI to eliminate mundane tasks and unlock human
-                potential. I've also explored liquid handling robotic automation
-                at the MIT Media Lab, building agents using LangChain.
+                I'm interested in deep learning across computer vision, NLP, and
+                reasoning systems. On the engineering side, I'm passionate about AI automation
+                -- using agents to streamline complex workflows and eliminate
+                repetitive tasks. I've built automated agents using LangChain
+                and worked on robotic automation at the MIT Media Lab.
                 <br />
                 <br />I serve as an advisor to{" "}
                 <LinkPreview
