@@ -38,8 +38,8 @@ const projects: Project[] = [
     imageURL: "/projects/casava old landing.png",
     body: "A sublet search platform for college students that aggregates listings from Facebook Marketplace, Craigslist, and Airbnb into one interface. Uses AI and RAG to recommend listings based on user preferences, with chat functionality to find ideal matches. For sellers, the platform offers verified listing capabilities with built-in scam detection, in-app messaging, and payment processing to ensure secure transactions. Project is still ongoing and have received $1500 in pre-seed funding by MIT Sandbox.",
     tools: ["Next.js", "Tailwind", "Express", "Neon", "Prisma", "Gemini"],
-    demo: "https://mycasava.com",
-    source: undefined,
+    demo: "https://casava-v2.vercel.app/",
+    source: "https://github.com/aaronbiscotti/casava-v2",
   },
   {
     title: "Jeffrey's MacBook",
