@@ -19,7 +19,25 @@ const Bio = () => {
                   MIT
                 </LinkPreview>{" "}
                 studying computer science and engineering. I'm currently a
-                Software Development Engineering intern at{" "}
+                machine learning researcher at{" "}
+                <LinkPreview
+                  url="https://www.csail.mit.edu"
+                  className="bg-gradient-to-r from-red-500 to-yellow-500 bg-clip-text text-transparent font-bold"
+                >
+                  CSAIL
+                </LinkPreview>{" "}
+                and the{" "}
+                <LinkPreview
+                  url="https://bcs.mit.edu"
+                  className="bg-gradient-to-r from-cyan-500 to-cyan-700 bg-clip-text text-transparent font-bold"
+                >
+                  Department of Brain & Cognitive Sciences
+                </LinkPreview>
+                , conducting hyperparameter optimization by analyzing how
+                learning rates affect neural network convergence, validating
+                recent theory through large-scale PyTorch experiments.
+                <br />
+                <br />I previously interned 2x at{" "}
                 <LinkPreview
                   url="https://aws.amazon.com"
                   className="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent font-bold"
@@ -27,18 +45,18 @@ const Bio = () => {
                   Amazon Web Services
                 </LinkPreview>
                 , working on serverless containers with the Fargate Placement
-                team, and a part-time developer at{" "}
+                team, and am a part-time developer at{" "}
                 <span className="bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent font-bold">
                   Vibrantec
                 </span>
                 , a startup building a cross-platform health and wellness app.{" "}
                 <br />
                 <br />
-                I'm interested in deep learning across computer vision, NLP, and
-                reasoning systems. On the engineering side, I'm passionate about AI automation
-                -- using agents to streamline complex workflows and eliminate
-                repetitive tasks. I've built automated agents using LangChain
-                and worked on robotic automation at the MIT Media Lab.
+                I build side projects focused on automation tools and have
+                experience with the full product development cycle. I'm passionate about AI automation -- using agents
+                to streamline complex workflows and eliminate repetitive tasks.
+                I've built automated agents using LangChain and worked on
+                robotic automation at the MIT Media Lab.
                 <br />
                 <br />I serve as an advisor to{" "}
                 <LinkPreview
