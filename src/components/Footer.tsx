@@ -18,7 +18,7 @@ const Footer = () => {
         ▲
       </button>
       <div className="text-gray-400 text-sm text-center">
-        © 2025 Jeffrey Li. All rights reserved.
+        © 2026 Jeffrey Li. All rights reserved.
       </div>
     </div>
   );

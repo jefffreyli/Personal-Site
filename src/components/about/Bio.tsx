@@ -55,8 +55,6 @@ const Bio = () => {
                 I build side projects focused on automation tools and have
                 experience with the full product development cycle. I'm passionate about AI automation -- using agents
                 to streamline complex workflows and eliminate repetitive tasks.
-                I've built automated agents using LangChain and worked on
-                robotic automation at the MIT Media Lab.
                 <br />
                 <br />I serve as an advisor to{" "}
                 <LinkPreview

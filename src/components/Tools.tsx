@@ -11,9 +11,7 @@ export default function Tools() {
     <div>
       <div className="flex justify-center">
         <p className="max-w-4xl w-full bg-white shadow-xs rounded-lg p-6 items-center text-left">
-          Here are some <span className="font-semibold">tools</span> I've used
-          in previous roles and projects. Hover over each item to learn more
-          about my development experience.
+          Tools I've used in previous roles and projects:
         </p>
       </div>
 

@@ -29,7 +29,7 @@ export default function BioHeader() {
       <PhotoCarousel />
       <div>
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-5 text-dark-grey">
-          Hi, I&apos;m Jeffrey.
+          Jeffrey Li
         </h1>
         <Typewriter
           words={phrases}
@@ -107,12 +107,10 @@ const socials = [
 ];
 
 const phrases = [
-  "Hello :)",
-  "Welcome to the site!",
   "Socials and quick links below",
   "Download my resume",
-  "Click through the photos for more of my life",
+  "Click through photos for more of my life",
   "Check out my projects",
-  "📍 NYC",
+  "NYC",
   "MIT 2027",
 ];
