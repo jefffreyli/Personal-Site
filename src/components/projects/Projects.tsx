@@ -49,6 +49,14 @@ const projects: Project[] = [
         source: "/projects/hybrid-pruning-blog/index.html",
     },
     {
+        title: "Casava",
+        imageURL: "/projects/casava old landing.png",
+        body: "Search engine for college students to find apartments and sublets. Scrapes Facebook, Craigslist, Airbnb, and various other sites for listings. Backed by MIT Sandbox funding.",
+        tools: ["Next.js", "Express", "Prisma", "Webscraping"],
+        demo: "https://casava-v2.vercel.app",
+        source: "https://github.com/jefffreyli/casava-open",
+    },
+    {
         title: "Jeffrey's MacBook",
         imageURL: "/projects/jeffrey's macbook.png",
         body: "A personal website with a MacOS-style interface featuring a dock menu and apps like Finder, Notes, Spotify, Photos, Email, and Messages. Navigate to the Messages app to chat with an AI version of myself.",
