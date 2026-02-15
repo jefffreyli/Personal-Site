@@ -46,37 +46,44 @@ export default function PhotoCarousel() {
   const nextPhotos = getNextPhotos(3);
 
   return (
-    <div
-      className="w-40 h-40 lg:w-48 lg:h-48 mr-8 cursor-pointer relative group"
-      onClick={handleClick}
-    >
-      {/* Fan-out photos (shown on hover) */}
-      {nextPhotos.map((photo, index) => (
+    <div className="relative">
+      {/* Spinning tree decoration */}
+      <div className="spinning-tree absolute -top-8 -right-8 text-4xl z-50 pointer-events-none">
+        🌲
+      </div>
+      
+      <div
+        className="w-40 h-40 lg:w-48 lg:h-48 mr-8 cursor-pointer relative group"
+        onClick={handleClick}
+      >
+        {/* Fan-out photos (shown on hover) */}
+        {nextPhotos.map((photo, index) => (
+          <img
+            key={`fan-${index}`}
+            src={photo.src}
+            alt={photo.alt}
+            className={`absolute inset-0 w-full h-full object-cover rounded-md transition-all duration-300 pointer-events-none ${
+              index === 0
+                ? "opacity-0 group-hover:opacity-70 group-hover:rotate-[-8deg] group-hover:translate-x-[-4px] group-hover:translate-y-[-2px]"
+                : index === 1
+                ? "opacity-0 group-hover:opacity-70 group-hover:rotate-[8deg] group-hover:translate-x-[4px] group-hover:translate-y-[-2px]"
+                : "opacity-0 group-hover:opacity-70 group-hover:rotate-[-4deg] group-hover:translate-x-[-2px] group-hover:translate-y-[4px]"
+            }`}
+            style={{ zIndex: index + 1 }}
+          />
+        ))}
+
+        {/* Main current photo */}
         <img
-          key={`fan-${index}`}
-          src={photo.src}
-          alt={photo.alt}
-          className={`absolute inset-0 w-full h-full object-cover rounded-md transition-all duration-300 pointer-events-none ${
-            index === 0
-              ? "opacity-0 group-hover:opacity-70 group-hover:rotate-[-8deg] group-hover:translate-x-[-4px] group-hover:translate-y-[-2px]"
-              : index === 1
-              ? "opacity-0 group-hover:opacity-70 group-hover:rotate-[8deg] group-hover:translate-x-[4px] group-hover:translate-y-[-2px]"
-              : "opacity-0 group-hover:opacity-70 group-hover:rotate-[-4deg] group-hover:translate-x-[-2px] group-hover:translate-y-[4px]"
-          }`}
-          style={{ zIndex: index + 1 }}
+          src={currentPhoto.src}
+          alt={currentPhoto.alt}
+          className="relative w-full h-full object-cover rounded-md transition-all duration-300 z-10"
         />
-      ))}
 
-      {/* Main current photo */}
-      <img
-        src={currentPhoto.src}
-        alt={currentPhoto.alt}
-        className="relative w-full h-full object-cover rounded-md transition-all duration-300 z-10"
-      />
-
-      {/* Arrow overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-md transition-all duration-200 flex items-center justify-center z-30">
-        <HiChevronRight className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black bg-opacity-50 rounded-full p-1" />
+        {/* Arrow overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 rounded-md transition-all duration-200 flex items-center justify-center z-30">
+          <HiChevronRight className="text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black bg-opacity-50 rounded-full p-1" />
+        </div>
       </div>
     </div>
   );
