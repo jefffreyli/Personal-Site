@@ -42,5 +42,6 @@ body {
 }
 
 .spinning-tree {
-  animation: spin 4s linear infinite;
+  animation: spin 20s linear infinite;
+  transform-origin: center;
 }
