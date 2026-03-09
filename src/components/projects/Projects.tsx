@@ -33,6 +33,14 @@ const fillerImage =
 
 const projects: Project[] = [
     {
+        title: "Current",
+        imageURL: "/projects/current-screenshot.png",
+        body: "End-to-end feedback-to-code pipeline that transforms user feedback from X/Twitter into sandbox-tested, preview-ready pull requests. Built with X API, OpenAI, Supabase, Poke, Modal, GitHub, Vercel, and Twilio at TreeHacks 2026.",
+        tools: ["Python", "FastAPI", "Next.js", "Supabase", "OpenAI", "Vercel"],
+        demo: "https://devpost.com/software/tbd-25xmzs",
+        source: undefined,
+    },
+    {
         title: "Improved RAG for Financial QA",
         imageURL: "/projects/nlp_final_project.png",
         body: "A multi-stage RAG architecture for financial document question answering that combines document-level routing, dense retrieval, cross-encoder reranking, and reduced-context LLM querying. Improves accuracy from 72% to 92% on financial QA tasks while reducing token costs by 100x compared to raw LLM processing.",
