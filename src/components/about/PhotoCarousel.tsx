@@ -47,10 +47,6 @@ export default function PhotoCarousel() {
 
   return (
     <div className="relative">
-      {/* Spinning tree decoration */}
-      <div className="spinning-tree absolute -top-12 -right-12 text-6xl md:text-7xl lg:text-8xl z-50 pointer-events-none">
-        🌲
-      </div>
       
       <div
         className="w-40 h-40 lg:w-48 lg:h-48 mr-8 cursor-pointer relative group"
