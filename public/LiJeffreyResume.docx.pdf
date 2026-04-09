@@ -1,0 +1,215 @@
+%PDF-1.4
+%PDFASCII
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 6758 >>
+stream
+BT
+/F1 7 Tf
+72 760 Td
+(Jeffrey Li) Tj
+0 -8.4 Td
+(Website: jeffreyli.me | LinkedIn: jefffrey-li | Github: jefffreyli | Email:) Tj
+0 -8.4 Td
+(  jeffreyf@mit.edu | Phone: \(917\) 497-2086) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Education) Tj
+0 -8.4 Td
+(Massachusetts Institute of Technology | Cambridge, MA) Tj
+0 -8.4 Td
+(Bachelor of Science, Computer Science & Engineering | Exp. May 2027) Tj
+0 -8.4 Td
+(Relevant Coursework: Fundamentals of Programming, Linear Algebra, Discrete Math,) Tj
+0 -8.4 Td
+(  Programming in C and Assembly, Machine Learning, Algorithms, Software Construction,) Tj
+0 -8.4 Td
+(  Computation Structures, Deep Learning \(G\), Natural Language Processing) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Experience) Tj
+0 -8.4 Td
+(MIT Computer Science & Artificial Intelligence Lab + Department of Brain & Cognitive) Tj
+0 -8.4 Td
+(  Sciences | Cambridge, MA) Tj
+0 -8.4 Td
+(Machine Learning Researcher | Sept 2025 - Present) Tj
+0 -8.4 Td
+(  Reproduced empirical laws demonstrating that mean NN outputs vary linearly with the) Tj
+0 -8.4 Td
+(  learning rate. Validated the Edge of Stochastic Stability framework by tracking batch) Tj
+0 -8.4 Td
+(  sharpness and Hessian eigenvalues to explain how SGD self-regulates curvature.) Tj
+0 -8.4 Td
+(  Developing an automated data generation and training pipeline using a Student-Teacher) Tj
+0 -8.4 Td
+(  architecture and Search Augmented Instruction Learning \(SAIL\) to train open-source LLMs) Tj
+0 -8.4 Td
+(  for high-precision, multi-hop reasoning across noisy enterprise data.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Amazon Web Services | Seattle, WA) Tj
+0 -8.4 Td
+(Software Development Engineer Intern - AWS Fargate | Jun 2025 - Aug 2025) Tj
+0 -8.4 Td
+(  Built an internal CLI for Fargate teams used by 50+ engineers, integrating 8 service) Tj
+0 -8.4 Td
+(  APIs for ECS Managed Instances to automate test setup; processed 200+ ops/day and cut) Tj
+0 -8.4 Td
+(  setup time by 32% by replacing manual steps with scripted workflows.) Tj
+0 -8.4 Td
+(  Automated region build system for Fargate mechanic tool using infrastructure-as-code and) Tj
+0 -8.4 Td
+(  CI/CD, replacing a 14-step manual process with one-touch expansion into new AWS regions) Tj
+0 -8.4 Td
+(  and reducing deployment time from 1 week to 3 hours.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Amazon Web Services | Seattle, WA) Tj
+0 -8.4 Td
+(Software Development Engineer Intern - AWS Fargate | Jun 2024 - Aug 2024) Tj
+0 -8.4 Td
+(  Designed and implemented an asynchronous lifecycle management workflow using Java +) Tj
+0 -8.4 Td
+(  DynamoDB to automate the draining processes for ECS Managed Instances, reducing manual) Tj
+0 -8.4 Td
+(  intervention by 23% and improving lifecycle management efficiency.) Tj
+0 -8.4 Td
+(  Built test automation stack achieving 90+% code coverage through JUnit + Mockito,) Tj
+0 -8.4 Td
+(  structured logging, and metrics handling.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Vibrantec | Remote) Tj
+0 -8.4 Td
+(Team Lead & Full Stack Mobile App Developer | Jan 2024 - Jun 2025) Tj
+0 -8.4 Td
+(Led architecture & UI/UX development for health tech startup across 5 product launches,) Tj
+0 -8.4 Td
+(  implementing Flutter/Java with server-driven UI backend architecture and AWS Lambda) Tj
+0 -8.4 Td
+(  endpoints based on sales team and customer feedback.) Tj
+0 -8.4 Td
+(  Managed engineering team of 3 developers, increasing sprint velocity by 30% through) Tj
+0 -8.4 Td
+(  streamlined workflows with code reviews.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(The Silicon Project \(501\(c\)\(3\) nonprofit\) | New York, NY) Tj
+0 -8.4 Td
+(Founding Team Member, Director of Technology | Sept 2022 - Sept 2023) Tj
+0 -8.4 Td
+(  Scaled website operations to 5k+ monthly page views, leading team of developers through) Tj
+0 -8.4 Td
+(  comprehensive UI/UX redesign and SEO optimization that achieved top 3 Google and LLM) Tj
+0 -8.4 Td
+(  search rankings for key electronics donation keywords.) Tj
+0 -8.4 Td
+(  Built e-commerce platform processing $10k+ in sales from premium donor partnerships) Tj
+0 -8.4 Td
+(  \(Simons Foundation, Supreme, Nicole Miller, Ralph Lauren Family\), achieving financial) Tj
+0 -8.4 Td
+(  sustainability through discounted electronics resale without external funding.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Projects & Activities) Tj
+0 -8.4 Td
+(MIT Sandbox Innovation Fund | Sept 2024 - Sept 2025) Tj
+0 -8.4 Td
+(  Co-founded Casava, comprehensive sublet search platform aggregating listings scraped) Tj
+0 -8.4 Td
+(  from multiple platforms \(Facebook, Craigslist, RedNote\), securing $1,500 in pre-seed) Tj
+0 -8.4 Td
+(  funding and building a 100+ person waitlist prior to launch.) Tj
+0 -8.4 Td
+(  Developed a full-stack web app that scrapes and normalizes housing listings from) Tj
+0 -8.4 Td
+(  multiple sources using automated CRON jobs and LLM-powered extraction, serving) Tj
+0 -8.4 Td
+(  structured data through a RESTful API backed by PostgreSQL.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Improved RAG System for Financial Document Question Answering | Oct 2025 - Dec 2025) Tj
+0 -8.4 Td
+(  Researched and developed a RAG system for financial document QA by implementing) Tj
+0 -8.4 Td
+(  structure-aware PDF parsing, hybrid retrieval, fine-tuned cross-encoder reranking, and) Tj
+0 -8.4 Td
+(  optimized vector search pipelines to enhance retrieval accuracy on FinQA.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Adapting Token Pruning Methods from BERT to GPT-2 | Oct 2025 - Dec 2025) Tj
+0 -8.4 Td
+(  Investigated token pruning methods for GPT-2 to reduce computational costs while) Tj
+0 -8.4 Td
+(  maintaining performance. Adapted encoder-based techniques \(Learned Token Pruning and) Tj
+0 -8.4 Td
+(  Dynamic Token Reduction\) to autoregressive models, achieving 20-40% FLOP reduction.) Tj
+0 -8.4 Td
+(  Found that reinforcement learning-based pruning maintained perplexity better than) Tj
+0 -8.4 Td
+(  attention-based methods.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Harvard MIT Math Tournament, Community Staff | Sept 2024 - May 2025) Tj
+0 -8.4 Td
+(  Coordinated operations and social events planning for one of the world's most) Tj
+0 -8.4 Td
+(  prestigious high school math competitions, serving 1,000+ participants from around the) Tj
+0 -8.4 Td
+(  globe across dual November and February tournaments at MIT and Harvard.) Tj
+0 -8.4 Td
+() Tj
+0 -8.4 Td
+(Skills & Interests) Tj
+0 -8.4 Td
+(Organizations: HackMIT organizing committee, MIT Entrepreneurship club, Chinese Students) Tj
+0 -8.4 Td
+(  Club, FLI@MIT, MISTI) Tj
+0 -8.4 Td
+(Technologies: Python, Java, C, React, Node, Express, FastAPI, Tailwind, Typescript,) Tj
+0 -8.4 Td
+(  Flutter, Firebase, SQL, AWS, PyTorch, Swift, Xcode) Tj
+0 -8.4 Td
+(Interests: Startups, side projects, hikes, weightlifting, basketball, The Knicks, Suits,) Tj
+0 -8.4 Td
+(  12 Angry Men) Tj
+0 -8.4 Td
+(Languages: English, Chinese - All professional proficiency or above.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000125 00000 n 
+0000000195 00000 n 
+0000007005 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+7131
+%%EOF
