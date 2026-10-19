@@ -5,8 +5,8 @@ export const projects: Project[] = [
   {
     title: "Current",
     imageURL: undefined,
-    body: "End-to-end feedback-to-code pipeline that transforms user feedback from X/Twitter into sandbox-tested, preview-ready pull requests. Built with X API, OpenAI, Supabase, Poke, Modal, GitHub, Vercel, and Twilio at TreeHacks 2026.",
-    tools: ["Python", "FastAPI", "Next.js", "Supabase", "OpenAI", "Vercel"],
+    body: "An agent harness that transforms user feedback from X/Twitter or SMS/calls into sandbox-tested, preview-ready pull requests. Project for TreeHacks 2026.",
+    tools: ["Python", "FastAPI", "Next.js", "Supabase", "OpenAI", "Vercel", "Poke", "Twilio", "X API"],
     demo: "https://devpost.com/software/tbd-25xmzs",
     source: undefined,
   },
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     title: "Bronx Science NHS Website",
     imageURL: "/projects/bxsci_nhs_website.png",
     body: "The official site for the Bronx Science National Honor Society (NHS) provides details on the application process, member responsibilities, and tutoring forms. Created as my first web development project, it is now used and maintained by student leaders at Bronx Science.",
-    tools: ["React.js", "Tailwind"],
+    tools: ["React", "Tailwind"],
     demo: "https://bxscinhs.vercel.app/",
     source: "https://github.com/jefffreyli/Bronx-Science-NHS",
   },
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   {
     title: "3D Animation of Cancer",
     imageURL: "/projects/3d animation dna.png",
-    body: "A fully animated project created in Autodesk Maya and edited in Adobe Premiere. All 3D models were built and rendered in Maya, with Python scripts used to automate repetitive tasks like randomizing DNA helix and cell positions. Created as a final project for MITES Semester 2023.",
+    body: "A fully animated project created in Autodesk Maya. All 3D models were built and rendered in Maya, with Python scripts used to automate repetitive tasks like randomizing DNA helix and cell positions. Created as a final project for MITES Semester 2023.",
     tools: ["Python", "Maya"],
     demo: "https://www.youtube.com/watch?v=mRDQ30rnnb4",
     source: undefined,
