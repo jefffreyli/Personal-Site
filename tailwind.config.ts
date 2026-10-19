@@ -1,41 +1,45 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
-      animation: {
-        scroll:
-          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
       },
-      keyframes: {
-        scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
-          },
-        },
-      },
+      // Notion's light theme palette. Each color has a text shade and a tinted background.
       colors: {
-        "light-blue-1": "#E7EBF2",
-        "light-blue-2": "#d1e1f6",
-        "light-blue-3": "#BFD6F4",
-        "dark-blue-1": "#3A6286",
-        "dark-blue-2": "#000000",
-        "dark-blue-3": "#184A81",
-        "dark-grey": "#2E2C2C",
+        notion: {
+          text: "#37352F",
+          muted: "#787774",
+          faint: "#9B9A97",
+          border: "#E9E9E7",
+          surface: "#F7F6F3",
+          accent: "#2383E2",
+          gray: "#787774",
+          "gray-bg": "#F1F1EF",
+          brown: "#9F6B53",
+          "brown-bg": "#F4EEEE",
+          orange: "#D9730D",
+          "orange-bg": "#FBECDD",
+          yellow: "#CB912F",
+          "yellow-bg": "#FBF3DB",
+          green: "#448361",
+          "green-bg": "#EDF3EC",
+          blue: "#337EA9",
+          "blue-bg": "#E7F3F8",
+          purple: "#9065B0",
+          "purple-bg": "#F6F3F9",
+          pink: "#C14C8A",
+          "pink-bg": "#FAF1F5",
+          red: "#D44C47",
+          "red-bg": "#FDEBEC",
+        },
       },
     },
   },

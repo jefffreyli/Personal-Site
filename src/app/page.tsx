@@ -1,20 +1,19 @@
-import Bio from "../components/about/Bio";
-import Footer from "../components/Footer";
-import Projects from "../components/projects/Projects";
-import SpotifySection from "../components/spotify/SpotifySection";
-import Tools from "../components/Tools";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import HomeContent from "@/components/home/HomeContent";
+import { parseContent } from "@/lib/content";
+
+// Rebuild daily so the timeline's "today" line stays current.
+export const revalidate = 86400;
+
+const CONTENT_PATH = path.join(process.cwd(), "content", "home.txt");
 
 export default function Home() {
+  const sections = parseContent(readFileSync(CONTENT_PATH, "utf8"));
+
   return (
-    <div className="bg-gray-100 text-gray-700 px-10 py-5 lg:p-0">
-      <Bio />
-      <div className="h-10" />
-      <Tools />
-      <div className="h-5" />
-      <Projects />
-      <div className="h-5" />
-      <SpotifySection />
-      <Footer />
+    <div className="mx-auto max-w-2xl space-y-12 px-6 pb-12 pt-16">
+      <HomeContent sections={sections} />
     </div>
   );
 }

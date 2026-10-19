@@ -1,0 +1,40 @@
+// Home page content. Edit this file and refresh; no code changes needed.
+//
+// Lines starting with // are comments and are ignored.
+// Blank line          ends a paragraph or list
+// ## Title            starts a new section with that heading
+// - item              list item (a plain line right after it continues the item)
+// <Timeline />        experience timeline (data lives in src/lib/experience.ts)
+// <SocialLinks />     LinkedIn / X / GitHub / Email links (src/lib/socials.ts)
+//
+// Inline:
+// [text](https://...)                          plain link
+// {text | color=red}                           colored tag
+// {text | photo=/photos/x.jpeg}                photo pops up on hover (portrait)
+// {text | photo=/photos/x.jpeg | landscape}    same, for wide photos
+// {text | color=blue | link=https://...}       colored link
+// Options can be combined, except photo and link.
+// Colors: gray, brown, orange, yellow, green, blue, purple, pink, red
+
+I grew up in {NYC | photo=/photos/rainy day chelsea.jpeg} and I'm
+now a senior at {MIT | color=red | photo=/photos/mit stata center.jpeg} studying
+computer science.
+
+I'm interested in building applied AI systems, especially the backend infrastructure that makes agents reliable and useful, as well as questions around AI safety and alignment.
+
+Currently, I'm working on reinforcement learning for human aligned AI with [SERC](https://computing.mit.edu/cross-cutting/social-and-ethical-responsibilities-of-computing/)
+
+## Previously
+- Research engineer at {SmallestAI | color=purple}, post-training multilingual
+  speech to text and emotion detection models
+- Machine learning researcher at MIT CSAIL, studying how learning rates shape
+  neural network training and training models for long horizon tasks.
+- Interned twice at {AWS | color=orange | photo=/photos/amazon badge.jpeg} on the
+  Fargate team.
+- Raised money and built [MatchMIT](https://match.hackmit.org/) and led [Plume](https://plume.hackmit.org/) for {HackMIT | color=blue | link=https://hackmit.org/}
+
+## Experience
+<Timeline />
+
+## Links
+<SocialLinks />

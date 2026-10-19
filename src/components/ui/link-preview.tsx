@@ -19,7 +19,6 @@ type LinkPreviewProps = {
   width?: number;
   height?: number;
   quality?: number;
-  layout?: string;
 } & (
   | { isStatic: true; imageSrc: string }
   | { isStatic?: false; imageSrc?: never }
@@ -32,7 +31,6 @@ export const LinkPreview = ({
   width = 200,
   height = 125,
   quality = 50,
-  layout = "fixed",
   isStatic = false,
   imageSrc = "",
 }: LinkPreviewProps) => {
@@ -67,8 +65,8 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
+  const handleMouseMove = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const targetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
     x.set(offsetFromCenter);
@@ -83,7 +81,6 @@ export const LinkPreview = ({
             width={width}
             height={height}
             quality={quality}
-            // layout={layout}
             priority={true}
             alt="hidden image"
           />
@@ -141,7 +138,6 @@ export const LinkPreview = ({
                     width={width}
                     height={height}
                     quality={quality}
-                    // layout={layout}
                     priority={true}
                     className="rounded-lg"
                     alt="preview image"
